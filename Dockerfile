@@ -6,7 +6,7 @@ ENV OTP_BASE /var/otp
 ENV OTP_GRAPHS $OTP_BASE/graphs
 
 RUN set -x && \
-    apk add --no-cache ca-certificates openssl && \
+    apk add --no-cache ca-certificates openssl ttf-dejavu && \
     mkdir -p $OTP_BASE/scripting $OTP_GRAPHS/brandenburg && \
     wget -O $OTP_BASE/otp.jar https://repo1.maven.org/maven2/org/opentripplanner/otp/1.2.0/otp-1.2.0-shaded.jar && \
     wget -O $OTP_BASE/jython.jar http://search.maven.org/remotecontent?filepath=org/python/jython-standalone/2.7.0/jython-standalone-2.7.0.jar && \
