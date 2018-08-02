@@ -1,4 +1,4 @@
-# OpenTripPlanner Docker for Berlin/Brandenburg
+# OpenTripPlanner Docker for Switzerland
 
 ## Run OpenTripPlanner with docker-compose
 
@@ -13,11 +13,11 @@ docker-compose up -d # to run it detached in background
 
 ## Build container
 
-`docker build -t opentripplanner-brb .`
+`docker build -t opentripplanner-switzerland .`
 
 ## Run container
 
-`docker run -p 80:8080 opentripplanner-brb --router brandenburg --server`
+`docker run -p 80:8080 opentripplanner-switzerland --router switzerland --server`
 
 Access OpenTripPlanner at `http://localhost:80/`.
 
