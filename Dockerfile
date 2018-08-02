@@ -14,8 +14,10 @@ RUN set -x && \
     sed -i -- 's/"Taxi","1501"/"Taxi","715"/g' $OTP_GRAPHS/switzerland/routes.txt && \
     zip -ju $OTP_GRAPHS/switzerland/timetable-2018-gtfs.zip $OTP_GRAPHS/switzerland/routes.txt && \
     rm $OTP_GRAPHS/switzerland/routes.txt && \
-    wget -P $OTP_GRAPHS/switzerland https://download.geofabrik.de/europe/switzerland-latest.osm.pbf && \
-    java -Xmx8G -jar /var/otp/otp.jar --build /var/otp/graphs/switzerland
+    wget -O $OTP_GRAPHS/switzerland/switzerland-latest.osm.pbf https://download.geofabrik.de/europe/switzerland-latest.osm.pbf && \
+    java -Xmx8G -jar /var/otp/otp.jar --build /var/otp/graphs/switzerland && \
+    rm $OTP_GRAPHS/switzerland/timetable-2018-gtfs.zip && \
+    rm $OTP_GRAPHS/switzerland/switzerland-latest.osm.pbf
 
 EXPOSE 8080
 EXPOSE 8081
