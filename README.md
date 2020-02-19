@@ -17,7 +17,7 @@ docker-compose up -d # to run it detached in background
 
 ## Run container
 
-`docker run -p 80:8080 opentripplanner-switzerland --router switzerland --server`
+`docker run -p 80:8080 opentripplanner-switzerland --router switzerland --server --analyst`
 
 Access OpenTripPlanner at `http://localhost:80/`.
 
